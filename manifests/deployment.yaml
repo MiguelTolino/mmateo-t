@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: my-app-container
-        image: wil42/playground:v2  # Replace with your image and tag
+        image: wil42/playground:v1  # Replace with your image and tag
         ports:
         - containerPort: 8888
 ---
@@ -25,11 +25,9 @@ kind: Service
 metadata:
   name: my-app-service
 spec:
+  type: LoadBalancer
+  ports:
+    - port: 8888
+      targetPort: 8888
   selector:
     app: my-app
-  ports:
-    - protocol: TCP
-      port: 8888
-      targetPort: 8888
-  type: NodePort
-
