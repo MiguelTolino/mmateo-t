@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: my-app-container
-        image: wil42/playground:v1  # Replace with your image and tag
+        image: wil42/playground:v2  # Replace with your image and tag
         ports:
         - containerPort: 8888
 ---
